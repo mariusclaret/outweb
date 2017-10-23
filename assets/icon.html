@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+
+<body>
+    <style>
+        body {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            font-family: "Roboto";
+            cursor: default;
+            outline: none;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            background: #FFF;
+            --light: #4885ED;
+            --theme: #3875DD;
+            --dark: #2865CD;
+        }
+        
+        #mask_android {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            bottom: -40px;
+            left: -40px;
+            border-radius: 50%;
+            border: 48px solid #FFF;
+            opacity: 1;
+        }
+        
+        #mask_apple {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            bottom: -40px;
+            left: -40px;
+            border-radius: 100px;
+            border: 40px solid #000;
+            opacity: 0;
+        }
+        
+        #border {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            bottom: 8px;
+            left: 8px;
+            border-top: 1px solid var(--light);
+            border-bottom: 1px solid var(--dark);
+            border-radius: 50%;
+            opacity: 1;
+        }
+        
+        #content {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 192px;
+            width: 192px;
+            border: 4px solid #000;
+            overflow: hidden;
+            background: var(--light);
+        }
+        
+        #icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 211px;
+            transform: translate(-50%, -50%);
+            fill: var(--theme);
+        }
+    </style>
+
+    <div id="content">
+        <svg id="icon" viewBox="0 0 24 24">
+            <path d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+        </svg>
+
+        <div id="border"></div>
+        <div id="mask_android"></div>
+        <div id="mask_apple"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Outweb</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="robots" content="all">
+    <meta name="description" content="Outweb helps you to find high quality Progressive Web Apps and offers you the possibility to show your own. Made by @RccnMarius.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://outweb.io/">
+    <meta property="og:title" content="Outweb">
+    <meta property="og:image" content="https://outweb.io/banner.png">
+    <meta property="og:description" content="Outweb helps you to find high quality Progressive Web Apps and offers you the possibility to show your own. Made by @RccnMarius.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@RccnMarius">
+    <meta name="twitter:title" content="Outweb">
+    <meta name="twitter:image" content="https://outweb.io/banner.png">
+    <meta name="twitter:description" content="Outweb helps you to find high quality Progressive Web Apps and offers you the possibility to show your own. Made by @RccnMarius.">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Outweb">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" sizes="512x512" href="/512.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/solid.png">
+    <link rel="canonical" href="https://outweb.io/">
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="/firebase.js" defer></script>
+    <script src="/script.js" defer></script>
+    <script src="/ripple.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <div id="featured"></div>
+
+        <div id="search">
+            <div id="search_output"></div>
+            <div id="search_progress"></div>
+            <div id="search_message"></div>
+            <svg id="search_magnify" viewBox="0 0 24 24">
+                <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+            </svg>
+            <input id="search_input" placeholder="Search Progressive Web Apps" maxlength="80" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button id="search_clear" class="ripple">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="blocker"></div>
+    <div id="account"></div>
+    <div id="submit"></div>
+    <div id="snackbar"></div>
+
+    <navigation id="navigation">
+        <button id="navigation_notify" class="ripple">
+            <svg viewBox="0 0 24 24">
+                <path d="M16,17H7V10.5C7,8 9,6 11.5,6C14,6 16,8 16,10.5M18,16V10.5C18,7.43 15.86,4.86 13,4.18V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V4.18C7.13,4.86 5,7.43 5,10.5V16L3,18V19H20V18M11.5,22A2,2 0 0,0 13.5,20H9.5A2,2 0 0,0 11.5,22Z" />
+            </svg>
+        </button>
+        <button id="navigation_apps" class="ripple">
+            <svg viewBox="0 0 24 24">
+                <path d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M14,4C17.32,4 20,6.69 20,10C20,13.32 17.32,16 14,16A6,6 0 0,1 8,10A6,6 0 0,1 14,4M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82Z" />
+            </svg>
+        </button>
+        <button id="navigation_account" class="ripple">
+            <svg viewBox="0 0 24 24">
+                <path d="M12,13C9.33,13 4,14.33 4,17V20H20V17C20,14.33 14.67,13 12,13M12,4A4,4 0 0,0 8,8A4,4 0 0,0 12,12A4,4 0 0,0 16,8A4,4 0 0,0 12,4M12,14.9C14.97,14.9 18.1,16.36 18.1,17V18.1H5.9V17C5.9,16.36 9,14.9 12,14.9M12,5.9A2.1,2.1 0 0,1 14.1,8A2.1,2.1 0 0,1 12,10.1A2.1,2.1 0 0,1 9.9,8A2.1,2.1 0 0,1 12,5.9Z" />
+            </svg>
+        </button>
+        <button id="navigation_submit" class="ripple">
+            <svg viewBox="0 0 24 24">
+                <path d="M4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H16L12,22L8,18H4A2,2 0 0,1 2,16V4A2,2 0 0,1 4,2M4,4V16H8.83L12,19.17L15.17,16H20V4H4M11,6H13V9H16V11H13V14H11V11H8V9H11V6Z" />
+            </svg>
+        </button>
+    </navigation>
+
+    <div id="expand">
+        <div id="expand_spacing"></div>
+        <div id="expand_content"></div>
+    </div>
+
+    <template id="account_template">
+        <img id="account_image">
+        <div id="account_name"></div>
+        <div id="account_email"></div>
+        <div id="account_review"></div>
+        <div id="account_progress"></div>
+
+        <div id="account_auth">
+            <div id="account_animation">
+                <svg id="account_animation_svg" viewBox="0 0 24 24">
+                    <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M20,16H6L4,18V4H20" />
+                </svg>
+                <div id="account_animation_1"></div>
+                <div id="account_animation_2"></div>
+            </div>
+
+            <div id="account_title">Give feedback</div>
+            <div id="account_text">Help developers improve their apps by rating them and leaving a comment.</div>
+
+            <div id="account_google" class="ripple">
+                <svg viewBox="0 0 512 512">
+                    <path d="M113.5 309.4l-18 66.5-65 1.3C11 341.3 0 300 0 256c0-42.5 10.3-82.5 28.6-117.7l58 10.6 25.4 57.5c-5.3 15.5-8.2 32.2-8.2 49.5 0 18.8 3.4 36.8 9.7 53.4z" fill="#FBBB00" />
+                    <path d="M507.5 208.2c3 15.5 4.5 31.5 4.5 47.8 0 18.3-2 36.2-5.6 53.5-12.5 58.6-45 110-90 146L343 452 333 387.3c29.8-17.6 53.2-45 65.5-78h-137V208.3h246z" fill="#518EF8" />
+                    <path d="M416.3 455.6C372.3 491 316.7 512 256 512c-97.5 0-182.3-54.5-225.5-134.7l83-68c21.6 57.8 77.2 99 142.5 99 28 0 54.3-7.7 77-21l83.3 68.3z" fill="#28B446" />
+                    <path d="M419.4 59l-83 67.8c-23.3-14.6-50.8-23-80.4-23-66.7 0-123.4 43-144 102.7l-83.4-68.2C71.2 56 157 0 256 0c62 0 119 22 163.4 59z" fill="#F14336" />
+                </svg>
+                <span>Sign in with Google</span>
+            </div>
+        </div>
+    </template>
+
+    <template id="submit_template">
+        <div id="submit_output">
+            <div id="submit_category"></div>
+            <a class="ripple" href="https://doesmysiteneedhttps.com" target="_blank">
+                <div>Secure origin (required) </div>Site must be served over HTTPS.
+            </a>
+            <a class="ripple" href="https://www.w3.org/TR/appmanifest/#name-member" target="_blank">
+                <div>Name (required) </div>Manifest must contain <i>name</i> or <i>short_name</i> property.
+            </a>
+            <a class="ripple" href="https://www.w3.org/TR/appmanifest/#icons-member" target="_blank">
+                <div>Icon (required) </div>Manifest must contain <i>icons</i> array with an icon the size of 144x144 pixels or higher.
+            </a>
+            <a class="ripple" href="https://www.w3.org/TR/appmanifest/#description-member" target="_blank">
+                <div>Description (optional) </div>If <i>description</i> property not available, meta tags of start URL will be used.
+            </a>
+            <a class="ripple" href="https://www.w3.org/TR/appmanifest/#categories-member" target="_blank">
+                <div>Category (optional) </div>If <i>categories</i> array not available, selected category will be used.
+            </a>
+            <a class="ripple" href="https://www.w3.org/TR/appmanifest/#start_url-member" target="_blank">
+                <div>Start URL (optional) </div>If <i>start_url</i> property not available, app will launch in directory of manifest file.
+            </a>
+            <div id="submit_websites"></div>
+        </div>
+
+        <input id="submit_input" placeholder="https://example.com/manifest.json" maxlength="400" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+    </template>
+
+    <template id="expand_template">
+        <div id="expand_info">
+            <img id="expand_icon">
+            <div id="expand_name"></div>
+            <div id="expand_category"></div>
+            <div id="expand_description"></div>
+            <div id="expand_url"></div>
+            <button id="expand_down" class="ripple">
+                <svg viewBox="0 0 24 24">
+                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                </svg>
+            </button>
+            <div id="expand_action">
+                <button id="expand_launch" class="ripple">Launch app</button>
+                <button id="expand_share" class="ripple">Share Link</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="expand_auth">
+            <div id="expand_google" class="ripple">
+                <svg viewBox="0 0 512 512">
+                    <path d="M113.5 309.4l-18 66.5-65 1.3C11 341.3 0 300 0 256c0-42.5 10.3-82.5 28.6-117.7l58 10.6 25.4 57.5c-5.3 15.5-8.2 32.2-8.2 49.5 0 18.8 3.4 36.8 9.7 53.4z" fill="#FBBB00" />
+                    <path d="M507.5 208.2c3 15.5 4.5 31.5 4.5 47.8 0 18.3-2 36.2-5.6 53.5-12.5 58.6-45 110-90 146L343 452 333 387.3c29.8-17.6 53.2-45 65.5-78h-137V208.3h246z" fill="#518EF8" />
+                    <path d="M416.3 455.6C372.3 491 316.7 512 256 512c-97.5 0-182.3-54.5-225.5-134.7l83-68c21.6 57.8 77.2 99 142.5 99 28 0 54.3-7.7 77-21l83.3 68.3z" fill="#28B446" />
+                    <path d="M419.4 59l-83 67.8c-23.3-14.6-50.8-23-80.4-23-66.7 0-123.4 43-144 102.7l-83.4-68.2C71.2 56 157 0 256 0c62 0 119 22 163.4 59z" fill="#F14336" />
+                </svg>
+                <span>Sign in with Google</span>
+            </div>
+        </div>
+
+        <div id="expand_account">
+            <img id="expand_account_image">
+            <div id="expand_account_name"></div>
+            <svg id="expand_account_rating" viewBox="0 0 185 30">
+                <path d="M15.2.6l4.6 9.5 10.5 1.5-7.6 7.4 1.8 10.4-9.3-4.9-9.4 4.9L7.6 19 0 11.6l10.5-1.5zm38.6 0l4.7 9.5 10.4 1.5-7.5 7.4 1.8 10.4-9.4-4.9-9.3 4.9L46.3 19l-7.6-7.4 10.5-1.5zm38.7 0l4.7 9.5 10.4 1.5-7.5 7.4 1.7 10.4-9.3-4.9-9.3 4.9L84.9 19l-7.5-7.4 10.4-1.5zm38.7 0l4.6 9.5 10.5 1.5-7.6 7.4 1.8 10.4-9.3-4.9-9.4 4.9 1.8-10.4-7.5-7.4 10.4-1.5zm38.6 0l4.7 9.5 10.5 1.5-7.6 7.4 1.8 10.4-9.4-4.9-9.3 4.9 1.8-10.4-7.6-7.4 10.5-1.5z" />
+            </svg>
+            <div id="expand_account_cover"></div>
+            <input id="expand_account_comment" maxlength="800">
+            <button id="expand_account_button" class="ripple"></button>
+        </div>
+
+        <hr>
+
+        <div id="expand_rating">
+            <div id="expand_rating_score">0.0</div>
+            <svg id="expand_rating_stars" viewBox="0 0 130 30">
+                <path d="M14.4 4L18 11l8 1.2-5.7 5.7 1.3 8-7.2-3.7L7.2 26l1.4-8-5.8-5.6 8-1.2zm26 0L44 11l8 1.2-5.8 5.7 1.4 8-7.2-3.7-7.2 3.8 1.3-8-5.8-5.6 8-1.2zM66 4l3.5 7.2 8 1.2-5.8 5.7 1.4 8-7-3.7-7.3 3.8 1.3-8-5.8-5.6 8-1.2zm25.4 0L95 11l8 1.2-5.8 5.7 1.4 8-7.2-3.7L84 26l1.5-8-5.8-5.6 8-1.2zM116 4l3.7 7.2 8 1.2L122 18l1.3 8-7.2-3.7-7 3.8 1.3-8-6-5.6 8.2-1.2z" />
+            </svg>
+            <div id="expand_rating_cover"></div>
+            <div id="expand_rating_users">By 0 users</div>
+            <div id="expand_rating_graph">
+                <div id="expand_rating_5"></div>
+                <div id="expand_rating_4"></div>
+                <div id="expand_rating_3"></div>
+                <div id="expand_rating_2"></div>
+                <div id="expand_rating_1"></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="expand_review"></div>
+    </template>
+
+    <noscript>This app requires JavaScript.</noscript>
+</body>
+
+</html>

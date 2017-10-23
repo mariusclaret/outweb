@@ -1,0 +1,4 @@
+#RewriteEngine On
+#RewriteCond %{SERVER_PORT} !=443
+#RewriteRule ^(.*)$ https://outweb.io/$1 [R=301,L]
+ErrorDocument 404 /

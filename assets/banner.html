@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+
+<body>
+    <style>
+        body {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            font-family: "Roboto";
+            cursor: default;
+            outline: none;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            background-color: #FFF;
+        }
+        
+        #content {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 500px;
+            width: 1000px;
+            border: 40px solid #000;
+            background: #fff;
+            overflow: hidden;
+        }
+        
+        #pattern {
+            position: absolute;
+            top: -358px;
+            left: 0;
+            height: 1000px;
+            width: 1856px;
+            opacity: 0.24;
+            filter: grayscale(100%);
+        }
+        
+        #icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 240px;
+            width: 240px;
+            transform: translate(-50%, -50%);
+        }
+        
+        #shadow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 220px;
+            width: 220px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.24);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+    <div id="content">
+        <img id="pattern" src="pattern.png">
+        <img id="icon" src="512_no_shadow.png">
+        <div id="shadow"></div>
+    </div>
+</body>
+
+</html>

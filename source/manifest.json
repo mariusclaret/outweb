@@ -1,0 +1,27 @@
+{
+    "lang": "en",
+    "name": "Outweb",
+    "short_name": "Outweb",
+    "description": "Outweb helps you to find high quality Progressive Web Apps and offers you the possibility to show your own. Made by @RccnMarius.",
+    "categories": ["utilities", "productivity", "social"],
+    "start_url": "/",
+    "scope": "/",
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "orientation": "portrait",
+    "gcm_sender_id": "103953800507",
+    "icons": [{
+        "src": "/144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }, {
+        "src": "/192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }, {
+        "src": "/512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }]
+}
